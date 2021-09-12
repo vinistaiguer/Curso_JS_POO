@@ -1,45 +1,37 @@
 import Cliente from "./classes/Cliente.js";
 import ContaCorrente from "./classes/ContaCorrente.js";
 
-/* SESSÃO DE CLIENTES */
-
-const clienteUm = new Cliente();
-clienteUm.nome = "Ricardo";
-clienteUm.cpf = 11122233344;
-
-const clienteDois = new Cliente();
-clienteDois.nome = "Alice";
-clienteDois.cpf = 99988877766;
 
 
-/* SESSÃO DE CONTA CORRENTE */
+const clienteUm = new Cliente("Ricardo", 11122233344);
 
-const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.cliente = clienteUm;
-contaCorrenteRicardo.depositar(1000);
+const clienteDois = new Cliente("Alice", 99988877766);
 
-const contaDois = new ContaCorrente();
-contaDois.cliente = clienteDois;
-contaDois.agencia = 102 ;
+const clienteTres = new Cliente("Vinícius", 99999999999);
 
-
-console.log(contaCorrenteAlice)
-
-console.log(contaCorrenteRicardo);
+const clienteQuatro = new Cliente("Beatriz", 99999999998)
 
 
 
+const contaTres = new ContaCorrente(2021 , clienteTres);
+contaTres.depositar(1000000);
+
+const contaQuatro = new ContaCorrente(2021, clienteQuatro);
+contaQuatro.depositar(2000000);
 
 
+const contaUm = new ContaCorrente(1001 , clienteUm);
+contaUm.depositar(1000);
 
 
-// contaCorrenteRicardo.transferir(1000, contaCorrenteAlice);
+const contaDois = new ContaCorrente(102 , clienteDois);
+contaDois.depositar(500);
 
-// console.log(contaCorrenteAlice);
+console.log(ContaCorrente.numeroDeContas);
 
-// console.log(contaCorrenteRicardo);
+console.log(contaTres);
 
+console.log(contaQuatro);
 
 
 //ESTUDO DA PROPOSTA DO USO DA CERQUILHA (#) PARA TORNAR ATRIBUTOS PRIVADOS
